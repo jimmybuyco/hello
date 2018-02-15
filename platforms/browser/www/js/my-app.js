@@ -1,5 +1,8 @@
 // Initialize app
 var myApp = new Framework7();
+var nim=0;
+var name=1;
+var qwe=2;
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -13,9 +16,11 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
-    console.log("Device is ready!");
+    // console.log("Device is ready!");
 
-
+    $("#nim").val(nim);
+    $("#name").val(name);
+    $("#qwe").val(qwe);
 });
 
 
@@ -31,19 +36,22 @@ myApp.onPageInit('about', function (page) {
 $$(document).on('pageInit', function (e) {
     // Get page data from event data
     var page = e.detail.page;
-
+    $("#nim").val(nim);
+    $("#name").val(name);
+    $("#qwe").val(qwe);
     if (page.name === 'about') {
         // Following code will be executed for page with data-page attribute equal to "about"
-        myApp.alert('Here comes About page');
-        $.ajax({
-            url: 'http://192.168.137.1/rpgDev/public/stats?user=1',
-            type: 'get',
-            success: function (data) {
-                // alert(data);
-                console.log(data['hp']);
-                // $("name").val(data['hp']);
-            }
-        });
+        // myApp.alert('Here comes About page');
+
+        // $.ajax({
+        //     url: 'http://192.168.137.1/rpgDev/public/stats?user=1',
+        //     type: 'get',
+        //     success: function (data) {
+        //         // alert(data);
+        //         console.log(data['hp']);
+        //         // $("name").val(data['hp']);
+        //     }
+        // });
     }
 
 
